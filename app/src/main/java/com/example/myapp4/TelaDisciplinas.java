@@ -56,6 +56,8 @@ public class TelaDisciplinas extends AppCompatActivity {
 
         SharedPreferences cache = getSharedPreferences("login", MODE_PRIVATE);
 
+        id_usuario = cache.getInt("id_usuario", 0);
+
 
 
     }
