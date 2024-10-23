@@ -127,6 +127,8 @@ public class MainActivity extends AppCompatActivity {
 
                     if (response.isSuccessful()) {
 
+                        Usuarios usuarios = response.body();
+
                         SharedPreferences.Editor editor = getSharedPreferences("login", MODE_PRIVATE).edit();
 
                         editor.putBoolean("logado", true);
