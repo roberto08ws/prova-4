@@ -8,6 +8,7 @@ import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.biometric.BiometricPrompt;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
@@ -25,6 +26,9 @@ import retrofit2.http.Query;
 public class MainActivity extends AppCompatActivity {
 
     private ActivityMainBinding view;
+    private BiometricPrompt biometric;
+    private int cont = 0;
+    private boolean very = false;
 
     private interface Login {
 
@@ -49,6 +53,8 @@ public class MainActivity extends AppCompatActivity {
                         .build();
 
         Login login = retrofit.create(Login.class);
+
+
 
         view.btnEntrar.setOnClickListener(e -> {
 
