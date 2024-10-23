@@ -68,6 +68,7 @@ public class TelaDisciplinas extends AppCompatActivity {
 
                 if (response.isSuccessful()) {
 
+                    list = response.body();
 
 
                 } else {
