@@ -82,4 +82,12 @@ public class MainActivity extends AppCompatActivity {
         });
 
     }
+
+    private void trocaTela() {
+
+        startActivity(new Intent(MainActivity.this, TelaDisciplinas.class));
+        finish();
+
+    }
+
 }
