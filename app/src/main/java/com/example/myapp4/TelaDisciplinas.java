@@ -10,6 +10,7 @@ import android.util.Log;
 import android.view.View;
 import android.view.animation.AlphaAnimation;
 import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -145,6 +146,12 @@ public class TelaDisciplinas extends AppCompatActivity {
 
             view.viewFundo.setAnimation(animation1);
             view.viewFundo.setVisibility(View.VISIBLE);
+
+            Animation animation2 = AnimationUtils.loadAnimation(TelaDisciplinas.this, R.anim.anim_in);
+            animation2.setDuration(400);
+
+            view.viewMenu.setAnimation(animation2);
+            view.viewMenu.setVisibility(View.VISIBLE);
 
         });
 
