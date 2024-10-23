@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.DatePickerDialog;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
@@ -171,6 +172,19 @@ public class TelaDisciplinas extends AppCompatActivity {
 
             view.viewMenu.setAnimation(animation2);
             view.viewMenu.setVisibility(View.GONE);
+
+        });
+
+        view.btnLogout.setOnClickListener(e -> {
+
+            SharedPreferences.Editor editor = getSharedPreferences("login", MODE_PRIVATE).edit();
+
+            editor.putBoolean("logado", false);
+            editor.putInt("id_usuario", 0);
+            editor.apply();
+
+            startActivity(new Intent(TelaDisciplinas.this, MainActivity.class));
+            finish();
 
         });
 
