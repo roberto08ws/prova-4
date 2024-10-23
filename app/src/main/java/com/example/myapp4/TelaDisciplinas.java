@@ -12,6 +12,9 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 
 import com.example.myapp4.databinding.ActivityTelaDisciplinasBinding;
 
+import retrofit2.Retrofit;
+import retrofit2.converter.gson.GsonConverterFactory;
+
 public class TelaDisciplinas extends AppCompatActivity {
 
     private ActivityTelaDisciplinasBinding view;
@@ -31,7 +34,8 @@ public class TelaDisciplinas extends AppCompatActivity {
         view.recyclerView.setLayoutManager(new LinearLayoutManager(TelaDisciplinas.this));
         view.recyclerView.setHasFixedSize(true);
 
-
+        Retrofit retrofit = new Retrofit.Builder().baseUrl("http:10.0.2.2:3000").addConverterFactory(GsonConverterFactory.create())
+                .build();
 
     }
 }
