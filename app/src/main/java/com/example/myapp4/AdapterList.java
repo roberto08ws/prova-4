@@ -1,14 +1,24 @@
 package com.example.myapp4;
 
+import android.content.Context;
 import android.view.View;
 import android.view.ViewGroup;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class AdapterList extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
 
+    private List<Disciplinas> list = new ArrayList<>();
+    private Context context;
 
+    public AdapterList(List<Disciplinas> list, Context context) {
+        this.list = list;
+        this.context = context;
+    }
 
     @NonNull
     @Override
