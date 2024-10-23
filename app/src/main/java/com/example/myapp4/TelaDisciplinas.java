@@ -3,6 +3,7 @@ package com.example.myapp4;
 import android.app.Activity;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.util.Log;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -16,6 +17,8 @@ import com.example.myapp4.databinding.ActivityTelaDisciplinasBinding;
 import java.util.List;
 
 import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 import retrofit2.http.GET;
@@ -58,7 +61,29 @@ public class TelaDisciplinas extends AppCompatActivity {
 
         id_usuario = cache.getInt("id_usuario", 0);
 
+        lista.lista(id_usuario).enqueue(new Callback<List<Disciplinas>>() {
+            @Override
+            public void onResponse(Call<List<Disciplinas>> call, Response<List<Disciplinas>> response) {
 
+                if (response.isSuccessful()) {
+
+
+
+                } else {
+
+                    Log.e("ERROR", "ERROR: " + response.code());
+
+                }
+
+            }
+
+            @Override
+            public void onFailure(Call<List<Disciplinas>> call, Throwable throwable) {
+
+                Log.e("ERROR", "Error: "  + throwable.getMessage());
+
+            }
+        });
 
     }
 }
