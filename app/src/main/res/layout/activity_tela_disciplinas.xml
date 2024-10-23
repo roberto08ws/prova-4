@@ -13,7 +13,7 @@
         android:layout_height="match_parent"
         android:background="@color/white"
         android:elevation="3dp"
-        android:visibility="visible"/>
+        android:visibility="gone"/>
 
     <ImageView
         android:id="@+id/imgMenu"
@@ -44,6 +44,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_marginTop="120dp"
+        tools:listitem="@layout/item_list"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
