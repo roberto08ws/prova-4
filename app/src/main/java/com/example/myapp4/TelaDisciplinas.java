@@ -60,6 +60,11 @@ public class TelaDisciplinas extends AppCompatActivity {
 
         SharedPreferences cache = getSharedPreferences("login", MODE_PRIVATE);
 
+        very = cache.getBoolean("logadoCampos", false);
+        very2 = cache.getBoolean("mostrarPop", false);
+
+
+
         id_usuario = cache.getInt("id_usuario", 0);
 
         lista.lista(id_usuario).enqueue(new Callback<List<Disciplinas>>() {
