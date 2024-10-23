@@ -43,6 +43,8 @@ public class MainActivity extends AppCompatActivity {
         Retrofit retrofit = new Retrofit.Builder().baseUrl("http:10.0.2.2:3000").addConverterFactory(GsonConverterFactory.create())
                         .build();
 
+        Login login = retrofit.create(Login.class);
+
         view.btnEntrar.setOnClickListener(e -> {
 
             String email = view.edtEmail.getText().toString().trim();
