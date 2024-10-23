@@ -1,7 +1,10 @@
 package com.example.myapp4;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
+import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -12,6 +15,8 @@ import androidx.core.view.WindowInsetsCompat;
 import com.example.myapp4.databinding.ActivityMainBinding;
 
 import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 import retrofit2.http.POST;
@@ -50,7 +55,29 @@ public class MainActivity extends AppCompatActivity {
             String email = view.edtEmail.getText().toString().trim();
             String senha = view.edtSenha.getText().toString().trim();
 
+            login.logar(email, senha).enqueue(new Callback<Usuarios>() {
+                @Override
+                public void onResponse(Call<Usuarios> call, Response<Usuarios> response) {
 
+                    if (response.isSuccessful()) {
+
+
+
+                    } else {
+
+                        Toast.makeText(MainActivity.this, "E-mail/Senha incorretos!", Toast.LENGTH_SHORT).show();
+
+                    }
+
+                }
+
+                @Override
+                public void onFailure(Call<Usuarios> call, Throwable throwable) {
+
+                    Log.e("ERROR", "Error: "  + throwable.getMessage());
+
+                }
+            });
 
         });
 
