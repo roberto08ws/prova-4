@@ -21,7 +21,12 @@ public class MainActivity extends AppCompatActivity {
 
     private ActivityMainBinding view;
 
+    private interface Login {
 
+        @POST("/login")
+        Call<Usuarios> logar(@Query("email") String email, @Query("senha") String senha);
+
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
