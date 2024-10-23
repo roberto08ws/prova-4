@@ -95,7 +95,13 @@ public class MainActivity extends AppCompatActivity {
                 public void onAuthenticationFailed() {
                     super.onAuthenticationFailed();
 
+                    cont++;
 
+                    if (cont >= 3) {
+
+                        biometric.cancelAuthentication();
+
+                    }
 
                 }
             });
