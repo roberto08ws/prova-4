@@ -29,7 +29,7 @@ public class MainActivity extends AppCompatActivity {
     private ActivityMainBinding view;
     private BiometricPrompt biometric;
     private int cont = 0;
-    private boolean very = false;
+    private boolean very = false, logado = false;
 
     private interface Login {
 
