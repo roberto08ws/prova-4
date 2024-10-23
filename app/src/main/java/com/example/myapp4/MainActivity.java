@@ -60,6 +60,15 @@ public class MainActivity extends AppCompatActivity {
         very = cache.getBoolean("permissao", false);
         logado = cache.getBoolean("logado", false);
 
+        if (very && logado) {
+
+            BiometricPrompt.PromptInfo promptInfo = new BiometricPrompt.PromptInfo.Builder()
+                    .setTitle("Validação Biométrica")
+                    .setDescription("Confirme a autenticação no aplicativo")
+                    .setNegativeButtonText("Cancelar")
+                    .build();
+
+        }
 
         view.btnEntrar.setOnClickListener(e -> {
 
