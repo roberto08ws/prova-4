@@ -30,6 +30,7 @@ public class TelaDisciplinas extends AppCompatActivity {
     private ActivityTelaDisciplinasBinding view;
     private int id_usuario = 0;
     private List<Disciplinas> list = new ArrayList<>();
+    private boolean very = false, very2 = false;
 
     private interface Lista {
 
@@ -53,8 +54,7 @@ public class TelaDisciplinas extends AppCompatActivity {
         view.recyclerView.setLayoutManager(new LinearLayoutManager(TelaDisciplinas.this));
         view.recyclerView.setHasFixedSize(true);
 
-        Retrofit retrofit = new Retrofit.Builder().baseUrl("http:10.0.2.2:3000").addConverterFactory(GsonConverterFactory.create())
-                .build();
+        Retrofit retrofit = new Retrofit.Builder().baseUrl("http:10.0.2.2:3000").addConverterFactory(GsonConverterFactory.create()).build();
 
         Lista lista = retrofit.create(Lista.class);
 
