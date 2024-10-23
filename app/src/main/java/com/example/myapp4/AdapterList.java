@@ -36,6 +36,8 @@ public class AdapterList extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
 
         TextView txtDisciplina = holder.itemView.findViewById(R.id.txtDisciplina);
 
+        txtDisciplina.setText(dis.getNome_disciplina());
+
     }
 
     @Override
