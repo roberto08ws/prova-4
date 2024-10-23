@@ -1,6 +1,9 @@
 package com.example.myapp4;
 
 import android.app.Activity;
+import android.app.AlertDialog;
+import android.app.DatePickerDialog;
+import android.content.DialogInterface;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
@@ -63,7 +66,36 @@ public class TelaDisciplinas extends AppCompatActivity {
         very = cache.getBoolean("logadoCampos", false);
         very2 = cache.getBoolean("mostrarPop", false);
 
+        if (very && !very2) {
 
+            AlertDialog.Builder pop = new AlertDialog.Builder(TelaDisciplinas.this);
+            pop.setTitle("Permissão de biometria");
+            pop.setMessage("Aceita usar a validação biométrica como forma de login?");
+            pop.setNegativeButton("Não", new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialogInterface, int i) {
+
+                    SharedPreferences.Editor editor = getSharedPreferences("login", MODE_PRIVATE).edit();
+                    editor.putBoolean("permissao", false);
+                    editor.putBoolean("mostrarPop", true);
+                    editor.apply();
+
+                }
+            });
+            pop.setPositiveButton("Sim", new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialogInterface, int i) {
+
+                    SharedPreferences.Editor editor = getSharedPreferences("login", MODE_PRIVATE).edit();
+                    editor.putBoolean("permissao", true);
+                    editor.putBoolean("mostrarPop", true);
+                    editor.apply();
+
+                }
+            });
+            pop.create().show();
+
+        }
 
         id_usuario = cache.getInt("id_usuario", 0);
 
