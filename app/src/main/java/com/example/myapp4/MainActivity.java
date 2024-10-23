@@ -87,7 +87,7 @@ public class MainActivity extends AppCompatActivity {
                 public void onAuthenticationSucceeded(@NonNull BiometricPrompt.AuthenticationResult result) {
                     super.onAuthenticationSucceeded(result);
 
-
+                    trocaTela();
 
                 }
 
