@@ -1,6 +1,7 @@
 package com.example.myapp4;
 
 import android.app.Activity;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 
 import androidx.activity.EdgeToEdge;
@@ -50,6 +51,10 @@ public class TelaDisciplinas extends AppCompatActivity {
                 .build();
 
         Lista lista = retrofit.create(Lista.class);
+
+        SharedPreferences cache = getSharedPreferences("login", MODE_PRIVATE);
+
+
 
     }
 }
