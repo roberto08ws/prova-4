@@ -24,6 +24,8 @@ import retrofit2.http.Path;
 public class TelaDisciplinas extends AppCompatActivity {
 
     private ActivityTelaDisciplinasBinding view;
+    private int id_usuario = 0;
+
 
     private interface Lista {
 
