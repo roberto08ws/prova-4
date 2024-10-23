@@ -79,7 +79,7 @@ public class MainActivity extends AppCompatActivity {
                 public void onAuthenticationError(int errorCode, @NonNull CharSequence errString) {
                     super.onAuthenticationError(errorCode, errString);
 
-
+                    Log.e("ERROR", "Erro na validação biométrica");
 
                 }
 
