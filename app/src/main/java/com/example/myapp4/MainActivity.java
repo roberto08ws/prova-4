@@ -87,6 +87,12 @@ public class MainActivity extends AppCompatActivity {
                 public void onAuthenticationSucceeded(@NonNull BiometricPrompt.AuthenticationResult result) {
                     super.onAuthenticationSucceeded(result);
 
+                    SharedPreferences.Editor editor = getSharedPreferences("login", MODE_PRIVATE).edit();
+
+                    editor.putBoolean("logado", true);
+                    editor.putBoolean("logadoCampos", false);
+                    editor.apply();
+
                     trocaTela();
 
                 }
