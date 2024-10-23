@@ -3,15 +3,15 @@ package com.example.myapp4;
 public class Disciplinas {
 
     private int id;
-    private String nome_disciplina, descricao_disciplina;
+    private String nome_disciplina, descricao;
 
     public Disciplinas() {
     }
 
-    public Disciplinas(int id, String nome_disciplina, String descricao_disciplina) {
+    public Disciplinas(int id, String nome_disciplina, String descricao) {
         this.id = id;
         this.nome_disciplina = nome_disciplina;
-        this.descricao_disciplina = descricao_disciplina;
+        this.descricao = descricao;
     }
 
     public int getId() {
@@ -30,11 +30,11 @@ public class Disciplinas {
         this.nome_disciplina = nome_disciplina;
     }
 
-    public String getDescricao_disciplina() {
-        return descricao_disciplina;
+    public String getDescricao() {
+        return descricao;
     }
 
-    public void setDescricao_disciplina(String descricao_disciplina) {
-        this.descricao_disciplina = descricao_disciplina;
+    public void setDescricao(String descricao) {
+        this.descricao = descricao;
     }
 }

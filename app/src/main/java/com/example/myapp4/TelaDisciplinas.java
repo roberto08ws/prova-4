@@ -42,7 +42,7 @@ public class TelaDisciplinas extends AppCompatActivity {
 
     private interface Lista {
 
-        @GET("/disciplinas-usuario/{id}}")
+        @GET("/disciplinas-usuario/{id}")
         Call<List<Disciplinas>> lista(@Path("id") int id);
 
     }
