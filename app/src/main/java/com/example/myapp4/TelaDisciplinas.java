@@ -188,5 +188,9 @@ public class TelaDisciplinas extends AppCompatActivity {
 
         });
 
+        view.viewMenu.setOnClickListener(e -> {
+
+        });
+
     }
 }
