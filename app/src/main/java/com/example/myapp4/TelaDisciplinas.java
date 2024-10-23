@@ -135,5 +135,18 @@ public class TelaDisciplinas extends AppCompatActivity {
             }
         });
 
+        view.imgMenu.setOnClickListener(e -> {
+
+            view.imgMenu.setEnabled(false);
+            view.viewFundo.setEnabled(true);
+
+            Animation animation1 = new AlphaAnimation(0, 1);
+            animation1.setDuration(400);
+
+            view.viewFundo.setAnimation(animation1);
+            view.viewFundo.setVisibility(View.VISIBLE);
+
+        });
+
     }
 }
