@@ -71,7 +71,7 @@ public class TelaDisciplinas extends AppCompatActivity {
                     list = response.body();
 
                     AdapterList adapterLista = new AdapterList(list, TelaDisciplinas.this);
-
+                    view.recyclerView.setAdapter(adapterLista);
 
                 } else {
 
