@@ -2,6 +2,7 @@ package com.example.myapp4;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
 import android.widget.Toast;
@@ -54,7 +55,7 @@ public class MainActivity extends AppCompatActivity {
 
         Login login = retrofit.create(Login.class);
 
-
+        SharedPreferences cache = getSharedPreferences("login", MODE_PRIVATE);
 
         view.btnEntrar.setOnClickListener(e -> {
 
