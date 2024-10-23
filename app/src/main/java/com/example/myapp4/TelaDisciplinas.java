@@ -14,6 +14,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 
 import com.example.myapp4.databinding.ActivityTelaDisciplinasBinding;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import retrofit2.Call;
@@ -28,7 +29,7 @@ public class TelaDisciplinas extends AppCompatActivity {
 
     private ActivityTelaDisciplinasBinding view;
     private int id_usuario = 0;
-
+    private List<Disciplinas> list = new ArrayList<>();
 
     private interface Lista {
 
