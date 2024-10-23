@@ -58,6 +58,8 @@ public class MainActivity extends AppCompatActivity {
         SharedPreferences cache = getSharedPreferences("login", MODE_PRIVATE);
 
         very = cache.getBoolean("permissao", false);
+        logado = cache.getBoolean("logado", false);
+
 
         view.btnEntrar.setOnClickListener(e -> {
 
