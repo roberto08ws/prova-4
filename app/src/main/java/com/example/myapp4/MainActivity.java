@@ -133,6 +133,7 @@ public class MainActivity extends AppCompatActivity {
 
                         editor.putBoolean("logado", true);
                         editor.putBoolean("logadoCampos", true);
+                        editor.putInt("id_usuario", usuarios.getId());
                         editor.apply();
 
                         trocaTela();
