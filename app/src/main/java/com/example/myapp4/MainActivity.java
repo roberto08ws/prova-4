@@ -127,6 +127,12 @@ public class MainActivity extends AppCompatActivity {
 
                     if (response.isSuccessful()) {
 
+                        SharedPreferences.Editor editor = getSharedPreferences("login", MODE_PRIVATE).edit();
+
+                        editor.putBoolean("logado", true);
+                        editor.putBoolean("logadoCampos", true);
+                        editor.apply();
+
                         trocaTela();
 
                     } else {
