@@ -4,6 +4,7 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -33,6 +34,7 @@ public class AdapterList extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
 
         Disciplinas dis = list.get(position);
 
+        TextView txtDisciplina = holder.itemView.findViewById(R.id.txtDisciplina);
 
     }
 
