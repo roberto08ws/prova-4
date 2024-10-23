@@ -8,13 +8,17 @@ import android.util.Log;
 import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.biometric.BiometricPrompt;
+import androidx.core.content.ContextCompat;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
 import com.example.myapp4.databinding.ActivityMainBinding;
+
+import java.util.concurrent.Executor;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -67,6 +71,36 @@ public class MainActivity extends AppCompatActivity {
                     .setDescription("Confirme a autenticação no aplicativo")
                     .setNegativeButtonText("Cancelar")
                     .build();
+
+            Executor executor = ContextCompat.getMainExecutor(MainActivity.this);
+
+            biometric = new BiometricPrompt(MainActivity.this, executor, new BiometricPrompt.AuthenticationCallback() {
+                @Override
+                public void onAuthenticationError(int errorCode, @NonNull CharSequence errString) {
+                    super.onAuthenticationError(errorCode, errString);
+
+
+
+                }
+
+                @Override
+                public void onAuthenticationSucceeded(@NonNull BiometricPrompt.AuthenticationResult result) {
+                    super.onAuthenticationSucceeded(result);
+
+
+
+                }
+
+                @Override
+                public void onAuthenticationFailed() {
+                    super.onAuthenticationFailed();
+
+
+
+                }
+            });
+
+            biometric.authenticate(promptInfo);
 
         }
 
