@@ -7,6 +7,9 @@ import android.content.DialogInterface;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
+import android.view.animation.AlphaAnimation;
+import android.view.animation.Animation;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -65,6 +68,12 @@ public class TelaDisciplinas extends AppCompatActivity {
 
         very = cache.getBoolean("logadoCampos", false);
         very2 = cache.getBoolean("mostrarPop", false);
+
+        Animation animation = new AlphaAnimation(1, 0);
+        animation.setDuration(4000);
+
+        view.viewHarmonico.setAnimation(animation);
+        view.viewHarmonico.setVisibility(View.GONE);
 
         if (very && !very2) {
 
