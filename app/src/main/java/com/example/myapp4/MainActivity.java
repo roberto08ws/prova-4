@@ -25,6 +25,7 @@ import retrofit2.Callback;
 import retrofit2.Response;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
+import retrofit2.http.Body;
 import retrofit2.http.POST;
 import retrofit2.http.Query;
 
@@ -38,7 +39,7 @@ public class MainActivity extends AppCompatActivity {
     private interface Login {
 
         @POST("/login")
-        Call<Usuarios> logar(@Query("email") String email, @Query("senha") String senha);
+        Call<Usuarios> logar(@Body ValidacaoLogin valida);
 
     }
 
@@ -54,7 +55,7 @@ public class MainActivity extends AppCompatActivity {
             return insets;
         });
 
-        Retrofit retrofit = new Retrofit.Builder().baseUrl("http:10.0.2.2:3000").addConverterFactory(GsonConverterFactory.create())
+        Retrofit retrofit = new Retrofit.Builder().baseUrl("http://10.0.2.2:3000").addConverterFactory(GsonConverterFactory.create())
                         .build();
 
         Login login = retrofit.create(Login.class);
@@ -121,7 +122,7 @@ public class MainActivity extends AppCompatActivity {
             String email = view.edtEmail.getText().toString().trim();
             String senha = view.edtSenha.getText().toString().trim();
 
-            login.logar(email, senha).enqueue(new Callback<Usuarios>() {
+            login.logar(new ValidacaoLogin(email, senha)).enqueue(new Callback<Usuarios>() {
                 @Override
                 public void onResponse(Call<Usuarios> call, Response<Usuarios> response) {
 
@@ -140,7 +141,7 @@ public class MainActivity extends AppCompatActivity {
 
                     } else {
 
-                        Toast.makeText(MainActivity.this, "E-mail/Senha incorretos!", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(MainActivity.this, "E-mail/Senha incorretos!: " + response.code(), Toast.LENGTH_SHORT).show();
 
                     }
 
